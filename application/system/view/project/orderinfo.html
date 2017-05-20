@@ -1,0 +1,151 @@
+{extend name="base/common" /}
+{block name="body"}
+	<div class="wrapper wrapper-content animated fadeIn">
+		<div class="ibox float-e-margins">
+				<div class="ibox-title">
+                        <h5>订单详情</h5>
+                 </div>
+			<div class="ibox-content">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="tabs-container">
+							<div class="tab-content">
+									<div class="ibox-content" style="border:none" >
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">订单ID</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.id}" name="id" readonly="readonly" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">订单编号</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.orderNO}" name="orderNO" readonly="readonly" />
+												</div>
+											</div>
+
+										<div class="form-group">
+											<label class=".col-xs-6 col-sm-2 control-label text-right">兑换码</label>
+											<div class=".col-xs-6 col-sm-10">
+												<input type="text" class="form-control" value="{$info.redeem_code}" name="redeem_code" readonly="readonly" />
+											</div>
+										</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">归属名称</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.belong_name}" name="belong_name" readonly="readonly" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">服务项目</label>
+												<div class=".col-xs-6 col-sm-10">
+													{if condition="$info.target ==1"}
+														<input type="text" class="form-control" value="{$info.target_name}" name="target_name" readonly="readonly" />
+													{else/}
+														{volist name="info.target_name" id="item"}
+															<input type="text" class="form-control" value="{$item.drugname}*{$item.drugnum}" name="target_name" readonly="readonly" />
+														{/volist}
+													{/if}
+												</div>
+											</div>
+
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">订单金额</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.money}" name="money" readonly="readonly"  />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">客户名称</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.vip_name}" name="vip_name" readonly="readonly"  />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">地址详情</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="联系人：{$info.address_info.name}" name="name" readonly="readonly"  />
+													<input type="text" class="form-control" value="手机号：{$info.address_info.phone}" name="phone" readonly="readonly"  />
+													<input type="text" class="form-control" value="地   址：{$info.address_info.address}" name="address" readonly="readonly"  />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">订单时间</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.date}" name="date" readonly="readonly"  />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">预约时间</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.appoint_date}" name="appoint_date" readonly="readonly"  />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">订单类型</label>
+												<div class=".col-xs-6 col-sm-10">
+
+													{switch name="info.type"}
+													{case value="1"}<input type="text" class="form-control" value="预约/自取" name="type" readonly="readonly"  />{/case}
+													{case value="2"}<input type="text" class="form-control" value="上门/配送" name="type" readonly="readonly"  />{/case}
+													{default /}<input type="text" class="form-control" value="未知" name="type" readonly="readonly"  />
+													{/switch}
+
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">订单状态</label>
+												<div class=".col-xs-6 col-sm-10">
+													{switch name="info.status"}
+													{case value="5"}<input type="text" class="form-control" value="待付款" name="status" readonly="readonly"  />{/case}
+													{case value="10"}<input type="text" class="form-control" value="进行中" name="status" readonly="readonly"  />{/case}
+													{case value="15"}<input type="text" class="form-control" value="服务已完成，待用户确认" name="status" readonly="readonly"  />{/case}
+													{case value="20"}<input type="text" class="form-control" value="医院已会诊" name="status" readonly="readonly"  />{/case}
+													{case value="25"}<input type="text" class="form-control" value="申请退款" name="status" readonly="readonly"  />{/case}
+													{case value="30"}<input type="text" class="form-control" value="已退款，待评价" name="status" readonly="readonly"  />{/case}
+													{case value="35"}<input type="text" class="form-control" value="用户确认完成，待评价" name="status" readonly="readonly"  />{/case}
+													{case value="40"}<input type="text" class="form-control" value="订单完成" name="status" readonly="readonly"  />{/case}
+													{default /}<input type="text" class="form-control" value="未知" name="status" readonly="readonly"  />
+													{/switch}
+												</div>
+											</div>
+
+											<div class="form-group">
+												<div class="col-sm-2"></div>
+												<div class="col-sm-4">
+													{if condition = "$info.status == 10"}
+													<form class="form-horizontal" action="{:url('proorder')}" method="post">
+														<input type="hidden" value="{$info.id}" name="id">
+														<button class="btn btn-primary ajax-post" type="submit" target-form="form-horizontal">订单处理</button>
+													</form>
+													<!--<a class="btn btn-primary" href="{:url('proorder',['id'=>$info['id']])}">-->
+														<!--订单处理-->
+													<!--</a>-->
+													{elseif condition = "$info.status == 25" /}
+													<!--<a class="btn btn-primary" href="{:url('refundorder',['id'=>$info['id']])}">-->
+														<!--确认退款-->
+													<!--</a>-->
+													{/if}
+													<button class="btn btn-white btn-back" type="button" >返回</button>
+												</div>
+											</div>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ {/block}

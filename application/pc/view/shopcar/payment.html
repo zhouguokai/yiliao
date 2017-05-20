@@ -1,0 +1,27 @@
+{extend name="common/common" /}
+{block name="body"}
+		<section id="main-payment">
+			<h2>选择支付方式</h2>
+			<div class="main-payment-box">
+				<img src="{$_img}/zhubo/wxzhifu.jpg"/>
+				<h4>微信支付</h4>
+				<input name="radio" type="radio" id="a" value=""/><label for="a" class="check"></label>
+			</div>
+			<div class="main-payment-box">
+				<img src="{$_img}/zhubo/zhifubao.jpg"/>
+				<h4>支付宝支付</h4>
+				<input name="radio" type="radio" id="b" value=""/><label for="b" class="check"></label>
+			</div>
+			<div class="main-payment-money">
+				<h3>总价：</h3><h3>￥</h3><h3>225</h3>
+			</div>
+			<div class="main-payment-btn">
+				支&nbsp;&nbsp;&nbsp;&nbsp;付
+			</div>
+		</section>
+<!-- <script type="text/javascript">
+$('.main-payment-btn').click(function(){
+	window.location.href = "{:url('order/index')}";
+})
+</script> -->
+{/block}

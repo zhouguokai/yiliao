@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script type="text/javascript" src="js/jquery.js"></script>
+	</head>
+	<body id="login-backg">
+		<div class="login-mid">
+			<img src="img/zhubo/login-tt.png" class="tt-img"/>
+			
+			<div class="login-inp">
+				<img src="img/zhubo/man.png"/>
+				<input type="tel" name="" id="" value="" placeholder="请输入帐号"/>
+			</div>
+			<div class="login-inp">
+				<img src="img/zhubo/passw.png"/>
+				<input type="password" name="" id="" value="" placeholder="请输入密码"/>
+			</div>
+			<button>确&nbsp;&nbsp;&nbsp;&nbsp;定</button>
+			<h2>注册</h2>
+			<h3>忘记密码</h3>
+		</div>
+	</body>
+<script type="text/javascript">
+	$(function(){
+		//页面跳转到注册
+		$('.login-mid').on("click",'h2',function(){
+			window.location.href='login-register.html'
+		})
+		//页面跳转到找回密码
+		$('.login-mid').on("click",'h3',function(){
+			window.location.href='login-find.html'
+		})
+	});
+</script>
+</html>

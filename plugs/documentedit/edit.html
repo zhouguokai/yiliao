@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="{$plugPath}/css/summernote.css">
+<link rel="stylesheet" href="{$plugPath}/css/summernote-bs3.css">
+<textarea name="{$name}" id="summernote" >{$value}</textarea>
+
+<script src="{$plugPath}/js/summernote.min.js"></script>
+<script src="{$plugPath}/js/summernote-zh-CN.js"></script>
+<script>
+$(document).ready(function() {
+    $("#summernote").summernote({
+        lang: "zh-CN",
+        height:'300px',
+        onblur: function(e) {
+    		$(this).parent().parent().find('textarea').val($(this).code());
+  		}
+    })
+});
+
+</script>

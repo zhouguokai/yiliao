@@ -1,0 +1,42 @@
+{extend name="base/common" /}
+{block name="body"}
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>轮播图管理</h5>
+				</div>
+				<div class="ibox-content">
+					<div class="table-responsive">
+						<div style="width: 100%;height: 200px">
+							<form action="{:url('addcarousel')}" method="post">
+								<table>
+									<tr>
+										<td width="150px">{:Plugs('uploadimages',['name'=>'img_id','type'=>1,'value'=>0])}</td>
+										<td><input class="btn btn-primary" type="submit" value="确认添加"></td>
+									</tr>
+								</table>
+							</form>
+						</div>
+						<div style="width:100%; float: left;">
+							{volist name="list" id="vo"}
+							<div style="height: 250px;width: 200px;float: left; margin-top: 10px;margin-left: 10px">
+								<div class="carouselarr" onclick="test()"><img src="{:getImgUrl($vo.img_id)}" width="200px" height="200px" ></div>
+								<div style="height: 50px; line-height: 50px;text-align: center"><a href="{:url('delcarousel',['id'=>$vo['id']])}"><i class="fa fa-trash text-danger"></i>删除</a></div>
+							</div>
+							{/volist}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" charset="utf-8">
+	function test(){
+//		alert(111);
+	}
+
+</script>
+{/block}

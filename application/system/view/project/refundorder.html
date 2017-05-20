@@ -1,0 +1,214 @@
+{extend name="base/common" /}
+{block name="body"}
+	<div class="wrapper wrapper-content animated fadeIn">
+		<div class="ibox float-e-margins">
+				<div class="ibox-title">
+                        <h5>订单退款管理</h5>
+                 </div>
+			<div class="ibox-content">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="tabs-container">
+							<div class="tab-content">
+									<div class="ibox-content" style="border:none" >
+										<form class="form-horizontal" action="{:url('orderrefund')}" method="post">
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">订单ID</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.id}" name="id" readonly="readonly" />
+													<input type="hidden" class="form-control" value="{$info.vip_id}" name="vip_id" readonly="readonly" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">订单编号</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.orderNO}" name="" readonly="readonly" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">支付接口订单号</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.payinfo.pay_order}" name="" readonly="readonly" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">订单金额</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.money}" name="" readonly="readonly" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">付款金额</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.payinfo.money}" name="" readonly="readonly" />
+													<input type="hidden" class="form-control" value="{$info.money}" name="money" readonly="readonly" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">付款方式</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{if condition=' $info.payinfo.payment == 1'}微信{else/}支付宝{/if}" name="" readonly="readonly" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">支付时间</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.payinfo.pay_date}" name="" readonly="readonly"  />
+												</div>
+											</div>
+											{volist name="info.refunds" id="vo" key="k"}
+												{if condition="$vo.refund_status == 1"}
+													<hr/>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">本次申请记录</label>
+													</div>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">申请类型</label>
+														<div class=".col-xs-6 col-sm-10">
+															<input type="text" class="form-control" value="{$vo.refund_type}" name="" readonly="readonly" />
+															<input type="hidden" name="refund_id" value="{$vo.id}">
+														</div>
+													</div>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">申请时间</label>
+														<div class=".col-xs-6 col-sm-10">
+															<input type="text" class="form-control" value="{$vo.apply_date}"  readonly="readonly" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">申请原因</label>
+														<div class=".col-xs-6 col-sm-10">
+															<input type="text" class="form-control" value="{$vo.reason}" readonly="readonly" />
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">申请凭证</label>
+														<div class=".col-xs-6 col-sm-10">
+															{if condition="$vo.apply_img == ''"}
+															<input type="text" class="form-control" value="未上传申请凭证" readonly="readonly" />
+															{else/}
+															<img src="http://localhost/yiliao/{$vo.apply_img}" height="80px" >
+															{/if}
+														</div>
+													</div>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">选择审核结果</label>
+														<div class=".col-xs-6 col-sm-10">
+															<select name="examine_result" id="section" class="form-control">
+																<option value="0" selected="selected">请选择审核结果</option>
+																<option value="1">同意申请</option>
+																<option value="2">拒绝申请</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">审核理由</label>
+														<div class=".col-xs-6 col-sm-10">
+															<input type="text" class="form-control" value="" name="examine_reason" placeholder="请填写同意/拒绝原因"/>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">审核金额</label>
+														<div class=".col-xs-6 col-sm-10">
+															<input type="text" class="form-control" value="{$vo.money}" name="examine_money" />
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="col-sm-2"></div>
+														<div class="col-sm-4">
+															<button class="btn btn-primary ajax-post" type="submit" target-form="form-horizontal">确认审核</button>
+														</div>
+													</div>
+												{else/}
+													<hr/>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">历史申请记录{$k}</label>
+													</div>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">申请类型</label>
+														<div class=".col-xs-6 col-sm-10">
+															<input type="text" class="form-control" value="{$vo.refund_type}" name="" readonly="readonly" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">申请时间</label>
+														<div class=".col-xs-6 col-sm-10">
+															<input type="text" class="form-control" value="{$vo.apply_date}"  readonly="readonly" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">申请原因</label>
+														<div class=".col-xs-6 col-sm-10">
+															<input type="text" class="form-control" value="{$vo.reason}" readonly="readonly" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">申请凭证</label>
+														<div class=".col-xs-6 col-sm-10">
+															{if condition="$vo.apply_img == ''"}
+															<input type="text" class="form-control" value="未上传申请凭证" readonly="readonly" />
+															{else/}
+															<img src="http://localhost/yiliao/{$vo.apply_img}" height="80px" >
+															{/if}
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">审核时间</label>
+														<div class=".col-xs-6 col-sm-10">
+															<input type="text" class="form-control" value="{$vo.examine_date}" readonly="readonly" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">审核金额</label>
+														<div class=".col-xs-6 col-sm-10">
+															<input type="text" class="form-control" value="{$vo.examine_money}" readonly="readonly" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">审核结果</label>
+														<div class=".col-xs-6 col-sm-10">
+															{if condition="$vo.examine_result == 2"}
+															<input type="text" class="form-control" value="拒绝" readonly="readonly" />
+															{else/}
+															<input type="text" class="form-control" value="同意" readonly="readonly" />
+															{/if}
+														</div>
+													</div>
+													<div class="form-group">
+														<label class=".col-xs-6 col-sm-2 control-label text-right">审核原因</label>
+														<div class=".col-xs-6 col-sm-10">
+															<input type="text" class="form-control" value="{$vo.examine_reason}" readonly="readonly" />
+														</div>
+													</div>
+													<br>
+												{/if}
+											{/volist}
+
+											<div class="form-group">
+												<div class="col-sm-2"></div>
+												<div class="col-sm-4">
+													<button class="btn btn-white btn-back" type="button" >返回</button>
+												</div>
+											</div>
+
+										</form>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ {/block}

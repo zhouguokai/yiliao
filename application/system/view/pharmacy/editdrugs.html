@@ -1,0 +1,85 @@
+{extend name="base/common" /}
+{block name="body"}
+	<div class="wrapper wrapper-content animated fadeIn">
+		<div class="ibox float-e-margins">
+				<div class="ibox-title">
+                        <h5>修改药品</h5>
+                 </div>
+			<div class="ibox-content">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="tabs-container">
+							<div class="tab-content">
+									<div class="ibox-content" style="border:none" >
+										<form class="form-horizontal" action="{:url()}" method="post">
+											<input type="hidden" name="id" value="{$info.id}">
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">名称</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.name}" name="name"  />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">分类</label>
+												<div class=".col-xs-6 col-sm-10">
+													<select name="class_id" id="section" class="form-control">
+														{foreach name="list" item="vo"}
+															{if condition="$vo.id == $info.class_id"}
+															<option value={$vo.id} selected="selected">{$vo.name}</option>
+															{else /}
+															<option value={$vo.id}>{$vo.name}</option>
+															{/if}
+														{/foreach}
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">图片</label>
+												<div class=".col-xs-6 col-sm-10">
+													<!--<textarea rows="5" cols="100" style="resize: none;" name="summary" ></textarea>-->
+													{:Plugs('uploadimages',['name'=>'img_id','type'=>1,'value'=>$info.img_id])}
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">简介</label>
+												<div class=".col-xs-6 col-sm-10">
+													<!--<textarea rows="5" cols="100" style="resize: none;" name="summary" >{$info.summary}</textarea>-->
+													{:Plugs('documentedit',['name'=>'summary','type'=>1,'value'=>$info.summary])}
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">价格</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.price}" name="price"  placeholder="请填写价格（不需住院的价格）"/>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">库存</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="{$info.stock}" name="stock" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<div class="col-sm-2"></div>
+												<div class="col-sm-4">
+													<button class="btn btn-primary ajax-post" type="submit" target-form="form-horizontal">保存</button>
+													<button class="btn btn-white btn-back" type="button" >返回</button>
+												</div>
+											</div>
+										</form>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ {/block}

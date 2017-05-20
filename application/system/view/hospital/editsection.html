@@ -1,0 +1,115 @@
+{extend name="base/common" /}
+{block name="body"}
+	<div class="wrapper wrapper-content animated fadeIn">
+		<div class="ibox float-e-margins">
+				<div class="ibox-title">
+                        <h5>修改病种</h5>
+                 </div>
+			<div class="ibox-content">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="tabs-container">
+							<div class="tab-content">
+									<div class="ibox-content" style="border:none" >
+										<form class="form-horizontal" action="{:url()}" method="post">
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">名称</label>
+												<div class=".col-xs-6 col-sm-10">
+													<select name="father_id" id="section" class="form-control">
+														{foreach name="list" item="vo"}
+															{if condition="$vo.id == $info.father_id"}
+															<option value={$vo.id} selected="selected">{$vo.name}</option>
+															{else /}
+															<option value={$vo.id}>{$vo.name}</option>
+															{/if}
+														{/foreach}
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">二级分类</label>
+												<div class=".col-xs-6 col-sm-10">
+													<select name="child_id" id="sectionchild" class="form-control">
+														<!--{foreach name="childlist" item="vo"}-->
+														<!--<option value={$vo.id}>{$vo.name}</option>-->
+														<!--{/foreach}-->
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">简介</label>
+												<div class=".col-xs-6 col-sm-10">
+													<textarea rows="10" cols="80" style="resize: none;" name="summary" >{$info.summary}</textarea>
+												</div>
+											</div>
+
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">价格</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value={$info.price} name="price"  placeholder="请填写价格（不需住院的价格）"/>
+												</div>
+											</div>
+
+											{if condition="$type == 1"}
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">是否提供住院</label>
+												<div class=".col-xs-6 col-sm-10">
+													<select name="hospitalization" id="hospitalization" class="form-control">
+														{if condition="$info.hospitalization == 1"}
+														<option value=1 selected="selected">提供</option>
+														<option value=0>不提供</option>
+														{else /}
+														<option value=1>提供</option>
+														<option value=0 selected="selected">不提供</option>
+														{/if}
+													</select>
+												</div>
+											</div>
+
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">住院价格</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value={$info.price_hospitalization} name="price_hospitalization"  placeholder="请填写需要住院的价格"/>
+												</div>
+											</div>
+											{/if}
+
+											<div class="form-group">
+												<div class="col-sm-2"></div>
+												<div class="col-sm-4">
+													<input type="hidden" name="id" value="{$info.id}">
+													<button class="btn btn-primary ajax-post" type="submit" target-form="form-horizontal">保存</button>
+													<button class="btn btn-white btn-back" type="button" >返回</button>
+												</div>
+											</div>
+										</form>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	$('#section').change(function () {
+		var secitonid = $(this).val();
+		if (secitonid == 0) {
+			return false;
+		}
+		alert(111);
+		$.getJSON("getsectionchild", {'id': secitonid}, function (data) {
+			var str = '';
+			$.each(data.data, function (k, v) {
+				str += '<option value="' + v.id + '" >' + v.name + '</option>';
+			});
+			$("#sectionchild").html(str);
+		});
+	})
+</script>
+ {/block}

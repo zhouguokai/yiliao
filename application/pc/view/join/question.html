@@ -1,0 +1,109 @@
+{extend name="common/common" /}
+{block name="body"}
+		<section id="main-join-question">
+			<h2>常见问题</h2>
+			<div class="main-join-question-content">
+				
+				<ul>
+					<li>
+						<div class="question-content-block">
+							<p>Q:与医团看病合作是否需要收费?</p><span></span>
+						</div>
+						<div class="question-content-none none">
+							<c>不同地区标准会有差异，具体合作费用及结算问题，在资质审核通过后，当地业务员会与您洽谈。</c>
+						</div>
+					</li>
+					<li>
+						<div class="question-content-block">
+							<p>Q:与医团看病合作是否需要收费?</p><span></span>
+						</div>
+						<div class="question-content-none none">
+							<c>不同地区标准会有差异，具体合作费用及结算问题，在资质审核通过后，当地业务员会与您洽谈。</c>
+						</div>
+					</li>
+					<li>
+						<div class="question-content-block">
+							<p>Q:与医团看病合作是否需要收费?</p><span></span>
+						</div>
+						<div class="question-content-none none">
+							<c>不同地区标准会有差异，具体合作费用及结算问题，在资质审核通过后，当地业务员会与您洽谈。</c>
+						</div>
+					</li>
+					<li>
+						<div class="question-content-block">
+							<p>Q:与医团看病合作是否需要收费?</p><span></span>
+						</div>
+						<div class="question-content-none none">
+							<c>不同地区标准会有差异，具体合作费用及结算问题，在资质审核通过后，当地业务员会与您洽谈。</c>
+						</div>
+					</li>
+					<li>
+						<div class="question-content-block">
+							<p>Q:与医团看病合作是否需要收费?</p><span></span>
+						</div>
+						<div class="question-content-none none">
+							<c>不同地区标准会有差异，具体合作费用及结算问题，在资质审核通过后，当地业务员会与您洽谈。</c>
+						</div>
+					</li>
+					<li>
+						<div class="question-content-block">
+							<p>Q:与医团看病合作是否需要收费?</p><span></span>
+						</div>
+						<div class="question-content-none none">
+							<c>不同地区标准会有差异，具体合作费用及结算问题，在资质审核通过后，当地业务员会与您洽谈。</c>
+						</div>
+					</li>
+					<li>
+						<div class="question-content-block">
+							<p>Q:与医团看病合作是否需要收费?</p><span></span>
+						</div>
+						<div class="question-content-none none">
+							<c>不同地区标准会有差异，具体合作费用及结算问题，在资质审核通过后，当地业务员会与您洽谈。</c>
+						</div>
+					</li>
+					<li>
+						<div class="question-content-block">
+							<p>Q:与医团看病合作是否需要收费?</p><span></span>
+						</div>
+						<div class="question-content-none none">
+							<c>不同地区标准会有差异，具体合作费用及结算问题，在资质审核通过后，当地业务员会与您洽谈。</c>
+						</div>
+					</li>
+					<li>
+						<div class="question-content-block">
+							<p>Q:与医团看病合作是否需要收费?</p><span></span>
+						</div>
+						<div class="question-content-none none">
+							<c>不同地区标准会有差异，具体合作费用及结算问题，在资质审核通过后，当地业务员会与您洽谈。</c>
+						</div>
+					</li>
+					<li>
+						<div class="question-content-block">
+							<p>Q:与医团看病合作是否需要收费?</p><span></span>
+						</div>
+						<div class="question-content-none none">
+							<c>不同地区标准会有差异，具体合作费用及结算问题，在资质审核通过后，当地业务员会与您洽谈。</c>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="main-page">
+				<span>1</span><span>2</span>...<span>3</span>
+			</div>
+		</section>
+		
+<script type="text/javascript">
+	$(function(){
+		$('.main-join-question-content .question-content-block span').on('click',function(){
+			if($(this).parent('.question-content-block').siblings().hasClass('none')){
+				$(this).css('background','url({$_img}/zhubo/question-2.png)')
+				$(this).parent('.question-content-block').siblings().removeClass('none')
+			}else{
+				$(this).css('background','url({$_img}/zhubo/question-1.png)')
+				$(this).parent('.question-content-block').siblings().addClass('none')
+			}
+			
+		})
+	})
+</script>
+{/block}

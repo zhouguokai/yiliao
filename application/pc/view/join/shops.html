@@ -1,0 +1,49 @@
+{extend name="common/common" /}
+{block name="body"}
+		<section id="main-join-shops">
+			<div class="main-join-shops-top"></div>
+			<div class="main-join-shops-bottom">
+				<div class="row">
+					<div class="col-xs-3">
+						<img src="{$_img}/zhubo/join-shops01.png"/>
+						<p>登录注册</p>
+						<c>步骤一焦点科技的</c><br/>
+						<c>步骤一焦点科技的</c><br/>
+						<c>步骤一焦点科技的</c><br/>
+					</div>
+					<div class="col-xs-3">
+						<img src="{$_img}/zhubo/join-shops02.png"/>
+						<p>登录注册</p>
+						<c>步骤一焦点科技的</c><br/>
+						<c>步骤一焦点科技的</c><br/>
+						<c>步骤一焦点科技的</c><br/>
+					</div>
+					<div class="col-xs-3">
+						<img src="{$_img}/zhubo/join-shops03.png"/>
+						<p>登录注册</p>
+						<c>步骤一焦点科技的</c><br/>
+						<c>步骤一焦点科技的</c><br/>
+						<c>步骤一焦点科技的</c><br/>
+					</div>
+					<div class="col-xs-3">
+						<img src="{$_img}/zhubo/join-shops04.png"/>
+						<p>登录注册</p>
+						<c>步骤一焦点科技的</c><br/>
+						<c>步骤一焦点科技的</c><br/>
+						<c>步骤一焦点科技的</c><br/>
+					</div>
+				</div>
+				<div class="main-join-shops-btn">
+					加&nbsp;&nbsp;&nbsp;&nbsp;入
+				</div>
+			</div>
+			
+		</section>
+<script type="text/javascript">
+	$(function(){
+		$('.main-join-shops-btn').on('click',function(){
+			window.location.href="{:url('join/join_in')}"
+		})
+	});
+</script>
+{/block}

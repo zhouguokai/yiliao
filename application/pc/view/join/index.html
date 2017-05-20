@@ -1,0 +1,41 @@
+{extend name="common/common" /}
+{block name="body"}
+		<section id="main-join-index">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="join-index-box">
+							<img src="{$_img}/zhubo/join01.png"/>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="join-index-box">
+							<img src="{$_img}/zhubo/join02.png"/>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="join-index-box">
+							<img src="{$_img}/zhubo/join03.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+<script type="text/javascript">
+	$(function(){
+		//按钮样式
+		$('#main-join-index .col-xs-4').on('mouseover',function(){
+			$(this).children('.join-index-box').css('background','url({$_img}/zhubo/join-select.png)')
+			$(this).siblings().children('.join-index-box').css('background','url({$_img}/zhubo/join-0.png)')
+		})
+		//按钮跳转
+		$('#main-join-index .col-xs-4').on('click',function(){
+			var a = $(this).index()
+			if(a == 0){window.location.href="{:url('join/shops')}"};
+			if(a == 1){window.location.href="{:url('join/question')}"}
+			if(a == 2){window.location.href="{:url('join/brand')}"}
+		})
+	});
+</script>
+{/block}

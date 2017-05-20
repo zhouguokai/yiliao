@@ -1,0 +1,139 @@
+{extend name="common/common" /}
+{block name="body"}
+		<section id="content">
+			<div class="container">
+				<div class="row">
+					<div class="shop_header common_header">
+						<div class="col-xs-2 shop_category">
+							<span class="shop_icon"><img src="{$_img}/xy/shop_logo.jpg"/></span>
+							<p class="shop_text">商家分类</p>
+						</div>
+						<div class="col-xs-4 shop_nav">
+							<ul class="row">
+								<li class="col-xs-4 text-center active"><a href="{:url('index/index')}">医院</a></li>
+								<li class="col-xs-4 text-center"><a href="{:url('index/menzhen')}">门诊</a></li>
+								<li class="col-xs-4 text-center"><a href="{:url('index/pharmacy')}">药店</a></li>
+							</ul>
+						</div>
+						<div class="col-xs-6">
+							
+						</div>
+					</div>
+					<div class="shop_content common_content">
+						<ul class="row">
+						{volist name = "list" id = "vo"}
+							<li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{:getImgUrl($vo.img_id)}" width="224" height="133" />
+									</div>
+									<p class="hospital_name">{$vo.name}</p>
+									<p class="hospital_add">{$vo.address}</p>
+								</a>
+							</li>
+							{/volist}
+							<!-- <li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{$_img}/xy/hospital.jpg"/>
+									</div>
+									<p class="hospital_name">北华大学附属医院</p>
+									<p class="hospital_add">北京市</p>
+								</a>
+							</li>
+							<li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{$_img}/xy/hospital.jpg"/>
+									</div>
+									<p class="hospital_name">北华大学附属医院</p>
+									<p class="hospital_add">北京市</p>
+								</a>
+							</li>
+							<li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{$_img}/xy/hospital.jpg"/>
+									</div>
+									<p class="hospital_name">北华大学附属医院</p>
+									<p class="hospital_add">北京市</p>
+								</a>
+							</li>
+							<li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{$_img}/xy/hospital.jpg"/>
+									</div>
+									<p class="hospital_name">北华大学附属医院</p>
+									<p class="hospital_add">北京市</p>
+								</a>
+							</li>
+							<li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{$_img}/xy/hospital.jpg"/>
+									</div>
+									<p class="hospital_name">北华大学附属医院</p>
+									<p class="hospital_add">北京市</p>
+								</a>
+							</li>
+							<li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{$_img}/xy/hospital.jpg"/>
+									</div>
+									<p class="hospital_name">北华大学附属医院</p>
+									<p class="hospital_add">北京市</p>
+								</a>
+							</li>
+							<li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{$_img}/xy/hospital.jpg"/>
+									</div>
+									<p class="hospital_name">北华大学附属医院</p>
+									<p class="hospital_add">北京市</p>
+								</a>
+							</li>
+							<li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{$_img}/xy/hospital.jpg"/>
+									</div>
+									<p class="hospital_name">北华大学附属医院</p>
+									<p class="hospital_add">北京市</p>
+								</a>
+							</li>
+							<li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{$_img}/xy/hospital.jpg"/>
+									</div>
+									<p class="hospital_name">北华大学附属医院</p>
+									<p class="hospital_add">北京市</p>
+								</a>
+							</li>
+							<li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{$_img}/xy/hospital.jpg"/>
+									</div>
+									<p class="hospital_name">北华大学附属医院</p>
+									<p class="hospital_add">北京市</p>
+								</a>
+							</li>
+							<li class="col-xs-3">
+								<a href="#">
+									<div class="hospital_img">
+										<img src="{$_img}/xy/hospital.jpg"/>
+									</div>
+									<p class="hospital_name">北华大学附属医院</p>
+									<p class="hospital_add">北京市</p>
+								</a>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		{/block}

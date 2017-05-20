@@ -1,0 +1,95 @@
+{extend name="base/common" /}
+{block name="body"}
+	<div class="wrapper wrapper-content animated fadeIn">
+		<div class="ibox float-e-margins">
+				<div class="ibox-title">
+                        <h5>新增</h5>
+                 </div>
+			<div class="ibox-content">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="tabs-container">
+							<div class="tab-content">
+									<div class="ibox-content" style="border:none" >
+										<form class="form-horizontal" action="{:url()}" method="post">
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">病种分类</label>
+												<div class=".col-xs-6 col-sm-10">
+													<select name="father_id" id="section" class="form-control">
+														<option value="0" selected="selected">请选择病种，如果没有请联系管理员</option>
+														{foreach name="list" item="vo"}
+														<option value="{$vo.id}">{$vo.name}</option>
+														{/foreach}
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">病种名称</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="" name="name"  placeholder="请输入病种名称"/>
+												</div>
+											</div>
+
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">图片</label>
+												<div class=".col-xs-6 col-sm-10">
+													<!--<textarea rows="5" cols="100" style="resize: none;" name="summary" ></textarea>-->
+													{:Plugs('uploadimages',['name'=>'img_id','type'=>1,'value'=>0])}
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">简介</label>
+												<div class=".col-xs-6 col-sm-10">
+													<textarea rows="5" cols="50" style="resize: none;" name="summary" ></textarea>
+												</div>
+											</div>
+
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">价格</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="0" name="price"  placeholder="请填写价格（不需住院的价格）"/>
+												</div>
+											</div>
+
+											{if condition="$type == 1"}
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">是否提供住院</label>
+												<div class=".col-xs-6 col-sm-10">
+													<select name="hospitalization" id="hospitalization" class="form-control">
+														<option value="0" selected="selected">请选择是否提供住院</option>
+														<option value=1>提供</option>
+														<option value=0>不提供</option>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">住院价格</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="" name="price_hospitalization"  placeholder="请填写需要住院的价格"/>
+												</div>
+											</div>
+											{/if}
+
+
+											<div class="form-group">
+												<div class="col-sm-2"></div>
+												<div class="col-sm-4">
+													<button class="btn btn-primary ajax-post" type="submit" target-form="form-horizontal">保存</button>
+													<button class="btn btn-white btn-back" type="button" >返回</button>
+												</div>
+											</div>
+										</form>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ {/block}

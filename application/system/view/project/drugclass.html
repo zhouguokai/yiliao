@@ -1,0 +1,35 @@
+{extend name="base/common" /}
+{block name="body"}
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>药品分类管理</h5>
+				</div>
+				<div class="ibox-content">
+					<div class="table-responsive">
+						<!--<form action="{:url('saveclass')}" method="post">-->
+							<div style="width: 640px; height: 100%; float: left;">
+								{volist name="list" id="vo"}
+								<div style="height: 60px;width: 150px;float: left; margin-top: 10px;margin-left: 10px">
+									<a href="{:url('classinfo',['id'=>$vo['id']])}"><div style="height: 30px; width: 150px"><input class="form-control" style="width: 150px;" readonly="readonly" type="text" name="name[]" value="{$vo.name}"></div></a>
+									<!--<div style="height: 10px; line-height: 30px;text-align: center"><a href="{:url('delclass',['id'=>$vo['id']])}"><i class="fa fa-trash text-danger"></i>删除</a></div>-->
+								</div>
+								{/volist}
+							</div>
+						<div style="height: 90px;width: 150px;float: left; margin-top: 10px;margin-left: 10px;clear: both; display: block;">
+							<form action="{:url('addclass')}" method="post" class="form-horizontal" >
+								<div style="height: 50px; width: 150px"><input class="form-control" style="width: 150px" type="text" name="name" value="" placeholder="请输入新的分类名"></div>
+								<button class="btn btn-primary ajax-post" target-form="form-horizontal" type="submit" style="clear: both; display: block;"  >点击新增</button>
+							</form>
+						</div>
+							<!--<button class="btn btn-primary" style="clear: both; display: block;" type="submit" >保存</button>-->
+						<!--</form>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{/block}

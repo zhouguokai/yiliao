@@ -1,0 +1,420 @@
+#content {
+	width:100%;
+	height:100%;
+	background-color: #f6f6f6;
+	font-family: "微软雅黑";
+	min-width: 1000px;
+	padding-bottom: 50px;
+}
+#content .pr_0 {padding-right:0;}
+#content .pl_0 {padding-left:0;}
+.none{display: none;}
+.block{display: block;}
+/*弹出模态框后，禁止滚动条*/
+.no_scroll {overflow: hidden;}
+/*首页*/
+#content .common_header {height:100px;margin:20px 0;background-color: #fff;}
+#content .shop_header .shop_category {padding-left:32px;line-height: 100px;}
+#content .shop_header .shop_category .shop_icon {float: left;line-height: 97px;}
+#content .shop_header .shop_category .shop_text {float: left;color:#666666;font-size: 18px;margin-left:7px;}
+#content .shop_header .shop_nav {font-size: 18px;color:#666;line-height: 100px;}
+#content .shop_header .shop_nav li.active a{color:#4874df;}
+#content .common_content {padding:30px 39px 12px;background-color: #fff;}
+#content .shop_content li {padding-bottom:17px;}
+#content .shop_content a .hospital_name {font-family: "微软雅黑";font-size: 14px;color:#2f3e4c;margin-top:7px;line-height: 20px;}
+#content .shop_content a .hospital_add {font-family: "微软雅黑";font-size: 12px;color:#999a9a;line-height: 18px;}
+/*医院或门诊详情、药店详情*/
+#content .min_width{min-width: 1200px;}
+#content .diseases_header {padding:0 31px;width:100%;}
+#content .diseases_header .diseases_choice {line-height: 100px;padding-right:0;width:102px;float: left;}
+#content .diseases_header .diseases_choice p {font-size: 18px;color: #666;}
+#content .diseases_header .diseases_detail {padding:13px 0 10px 103px;width:100%;position: relative;}
+#content .diseases_header .diseases_detail .diseases_detail_top {line-height: 40px;height:40px;padding:0 0 0 20px;margin-right:0;}
+#content .diseases_header .diseases_detail .diseases_detail_top_more {position: absolute;width:80%;right:5%;bottom:-150%;padding:10px 20px;border:1px solid #ccc;z-index: 999;background-color: #fff;}
+#content .diseases_header .diseases_detail .diseases_detail_top_more li {float: left;text-align: center;line-height: 40px;width:16%;}
+#content .diseases_header .diseases_detail .diseases_detail_top_more li a{padding:0 13px;color:#666;font-size: 18px;display: block;height:100%;}
+#content .diseases_header .diseases_detail .diseases_detail_bottom_more {position: absolute;width:80%;right:5%;bottom:-100%;padding:10px 20px;border:1px solid #ccc;z-index: 999;background-color: #fff;}
+#content .diseases_header .diseases_detail .diseases_detail_bottom_more li {float: left;text-align: center;line-height: 40px;width:16%;}
+#content .diseases_header .diseases_detail .diseases_detail_bottom_more li a{padding:0 13px;color:#666;font-size: 18px;display: block;height:100%;}
+#content .diseases_header .diseases_detail .diseases_detail_top li {float: left;text-align: center;}
+#content .diseases_header .diseases_detail  .diseases_detail_top .more_r,
+#content .diseases_header .diseases_detail  .diseases_detail_bottom .more_r {float: right;margin-right:40px;}
+#content .diseases_header .diseases_detail .diseases_detail_top li a {padding:0 13px;color:#666;font-size: 18px;display: block;height:100%;position: relative;}
+#content .diseases_header .diseases_detail .diseases_detail_top li.active a {color:#4874df;}
+#content .diseases_header .diseases_detail .diseases_detail_top li.active a:after {
+	content:"";
+	display: block;
+	width:16px;
+	height:16px;
+	position: absolute;
+	left:30%;
+	bottom:-8px;
+	background-color: #fff;
+	border:1px solid #e0e0e0;transform:rotate(45deg);
+	border-bottom:0;
+	border-right:0;
+}
+#content .diseases_header .diseases_detail .diseases_detail_bottom {line-height:34px;height:34px;border:1px solid #e0e0e0;border-radius:20px;padding-left:24px;}
+#content .diseases_header .diseases_detail .diseases_detail_bottom li {float: left;text-align: center;}
+#content .diseases_header .diseases_detail .diseases_detail_bottom li a {padding:0 12px;color:#666;font-size: 16px;}
+#content .diseases_header .diseases_detail .diseases_detail_bottom li.active a {color:#4874df;}
+#content .diseases_content{margin-top:20px;}
+#content .diseases_content .diseases_content_top{} 
+#content .diseases_content .diseases_content_top .media-left {padding-right:50px;}
+#content .diseases_content .diseases_content_top .media-body {vertical-align: middle;} 
+#content .diseases_content .diseases_content_top .media-body .media-heading {color:#2f3e4c;font-size: 16px;}
+#content .diseases_content .diseases_content_top .media-body .media-content {color:#999a9a;font-size: 14px;}
+#content .diseases_content .diseases_content_middle .common_header_style {
+	margin-top:33px;
+	padding:5px 0;
+	overflow: hidden;
+	border-bottom:1px solid #eaeaea;
+}
+#content .diseases_content  .common_header_style .brief_intro_icon {float: left;vertical-align: middle;}
+#content .diseases_content  .common_header_style .brief_intro_text {padding-top:10px;margin-left:10px;float: left;font-size: 18px;color:#333;}
+#content .diseases_content .diseases_content_middle .brief_intro_content {padding:23px 0 20px 0;}
+#content .diseases_content .diseases_content_middle .brief_intro_content p {line-height: 25px;text-indent: 2em;font-size: 14px;color:#999999;}
+/*评论*/
+#content .diseases_content .diseases_content_bottom {}
+#content .diseases_content .diseases_content_bottom .common_header_style {
+	padding:6px 0;
+	overflow: hidden;
+	border-bottom:1px solid #eaeaea;
+}
+#content .diseases_content .diseases_content_bottom .comment_content{overflow: hidden;}
+#content .diseases_content .diseases_content_bottom .comment_content ul{
+	padding:0 105px 0 56px;
+}
+#content .diseases_content .diseases_content_bottom .comment_content ul li {
+	margin-top:20px;
+	background-color: #f7f9fe;
+	padding:0 20px;
+}
+#content .diseases_content .diseases_content_bottom .comment_content ul li .comment_content_top {padding:11px 0 7px 0;overflow: hidden;}
+#content .diseases_content .diseases_content_bottom .comment_content ul li .comment_content_top .comment_name {float: left;font-size: 16px;color:#666;}
+#content .diseases_content .diseases_content_bottom .comment_content ul li .comment_content_top .comment_date {float: right;font-size: 12px;color:#999;}
+#content .diseases_content .diseases_content_bottom .comment_content ul li .comment_content_bottom {
+	font-size: 14px;
+	color:#999;
+	line-height: 32px;
+}
+
+/*分页样式*/
+.navigation {
+    width:100%;
+    margin-top:18px;
+    line-height: 45px;
+}
+.wp-paginate {
+    overflow: hidden;
+    width:15%;
+    margin:0 auto;
+}
+.wp-paginate li {
+    float:left;
+    list-style:none;
+    margin:2px;
+    padding:0;
+}
+.wp-paginate a {
+    margin:0 3px;
+    padding:0 3px;
+    text-align:center;
+    text-decoration:none;
+    float:left;
+    color:#cbcbcb;
+    font-size:12px;
+}
+.wp-paginate .gap {
+    color:#cbcbcb;
+}
+.wp-paginate .current {color:#333;}
+
+/*药品详情*/
+#content .diseases_content .diseases_content_top .media-body .medicine_name {color:#2f3e4c;font-size: 20px;font-weight: bold;}
+#content .diseases_content .diseases_content_top .media-body .medicine_price {color:#f42a51;font-size: 16px;line-height:24px;margin-bottom:18px;}
+#content .diseases_content .diseases_content_top .media-body a {cursor:pointer;background-color: #edfaff;width:142px;line-height:30px;display: block;border:1px solid #4874df; text-align: center;color:#333;font-size: 15px;;}
+#content .diseases_content .diseases_content_middle .brief_intro_content ul {padding-bottom:20px;}
+#content .diseases_content .diseases_content_middle .brief_intro_content li{margin-bottom:8px;}
+#content .diseases_content .diseases_content_middle .brief_intro_content li .brief_intro_content_title {font-size: 20px;color:#24292d;}
+#content .diseases_content .diseases_content_middle .brief_intro_content li .brief_intro_content_txt {font-size: 14px;color:#999999;text-indent: 0;padding-left:10px;}
+/*病种详情*/
+#content .diseases_content .diseases_content_top .media-body .btns {overflow: hidden;}
+#content .diseases_content .diseases_content_top .media-body .btns .order{float: left;}
+#content .diseases_content .diseases_content_top .media-body .btns .drop_in{float: left;margin-left:17px;}
+/*病种详情（必须住院治疗）*/
+#content .diseases_content .diseases_content_top .media-body .medicine_name span {font-weight: normal;}
+#content .cart_content {
+	padding:27px 40px 100px 27px;
+	background-color: #fff;
+	margin-top:20px;
+}
+#content .cart_content .cart_content_title {padding:1px 0;line-height: 20px;margin-bottom:34px;}
+#content .cart_content .cart_content_title h5 {font-size: 18px;color:#333333;font-weight: bold;margin:0;}
+/*#content .cart_content .cart_content_list {margin-top:34px;}*/
+#content .cart_content .cart_content_list  ul {overflow: hidden;}
+#content .cart_content .cart_content_list li.cart_content_list_item {padding:17px 13px;border:1px solid #d8d8d8;margin-top:28px;}
+#content .cart_content .cart_content_list li .list_top {height:52px;line-height: 52px;border-bottom:1px solid #ebebeb;padding:0 27px;}
+#content .cart_content .cart_content_list li .list_top .edit {float: left;padding:0 10px;font-size: 18px;color:#4874df;}
+#content .cart_content .cart_content_list li .list_top .finish {float: left;padding:0 10px;font-size: 18px;color:#4874df;}
+#content .cart_content .cart_content_list li .list_top .btns {float: right;margin-top:8px;}
+#content .cart_content .cart_content_list li .list_top .btns a{background-color: #edfaff;width:142px;line-height:30px;display: block;border:1px solid #4874df; text-align: center;color:#333;font-size: 15px;float: left;margin-left:17px;}
+#content .cart_content .cart_content_list li .list_bottom {padding:12px 38px 0 38px;}
+#content .cart_content .cart_content_list li .list_bottom .common_height {height:34px;line-height: 34px;}
+#content .cart_content .cart_content_list li .list_bottom .common_height p:first-child{float: left;font-size: 18px;color:#666666;}
+#content .cart_content .cart_content_list li .list_bottom .common_height p:last-child{float: right;font-size: 18px;color:#333;}
+/*购物车编辑和完成*/
+#content .finishing {display: none;}
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .input-number {
+  width: 43px;
+  vertical-align: top;
+  text-align: center;
+  outline: none;
+  border:none;
+  background: #f7f7f7;
+  color:#333;
+  font-size: 14px;
+}
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit {line-height: 26px;}
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .edit_num{height:26px;display: inline-block;float: left;margin-right:40px;margin-top:3px;}
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .delete_btn {float: right;line-height: 26px;margin-bottom:3px;cursor: pointer;}
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .input-number,
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .input-number-decrement,
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .input-number-increment {
+  height: 26px;
+  line-height: 26px;
+  user-select: none;
+}
+
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .input-number-decrement,
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .input-number-increment {
+  display: inline-block;
+  width: 32px;
+  line-height: 26px;
+  background: #f7f7f7;
+  color: #444444;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .input-number-decrement:active,
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .input-number-increment:active {
+  background: #dddddd;
+}
+
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .input-number-decrement {
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  margin-right:1px;
+}
+
+#content .cart_content .cart_content_list .list_bottom .cart_medicine_edit .input-number-increment {
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  margin-left:1px;
+  color:#f9263a;
+}
+
+/*时间弹窗*/
+.df-box {
+	background-color: rgba(255,255,255,.6);
+	font-family: "黑体";
+	font-size: 24px;
+}
+.df-final {
+	line-height: 56px;
+	font-size: 24px;
+	color:#fff;
+	background-color: #2a91e1;
+}
+.df-main {
+	background-color: #fff;
+}
+.df-class {
+	line-height: 40px;
+	color:#bcbcbc;
+	font-size: 20px;
+	font-family: simsun;
+}
+.df-item .G-bg {
+	font-size: 24px;
+	color:#bcbcbc;
+}
+.df-show {color:#908d8d;font-size: 20px;}
+.df-box .active {
+	color:#2a91e1;
+	border-top:1px solid #cfcfcf;
+	border-bottom:1px solid #cfcfcf;
+}
+.df-wrap:first-child td:first-child .active{
+	border-left:1px solid #cfcfcf;
+}
+.df-wrap:last-child td:last-child .active{
+	border-right:1px solid #cfcfcf;
+}
+.df-btn {
+	background-color: #fff;
+	padding-bottom:10px;
+}
+.df-btn div {
+	width:80%;
+	border:1px solid #cfcfcf;
+	text-align:center;
+	line-height:54px;
+	color:#383838;
+	font-family: "黑体";
+	font-size: 20px;
+}
+.df-btn div:active {
+    background: #2a91e1;
+    color: #fff;
+    border: 1px solid #2a91e1;
+}
+
+
+/*选择收货地址*/
+#content .address_content {padding:42px 70px;}
+#content .address_content .address_content_list .address_box {
+	width:218px;
+	height:147px;
+	background: url(../img/xy/address_bg.jpg) no-repeat;
+	padding:17px 15px;
+	cursor: pointer;
+}
+#content .address_content .address_content_list .default_box {
+	width:218px;
+	height:147px;
+	background: url(../img/xy/default_address_bg.jpg) no-repeat;
+}
+#content .address_content .address_content_list .address_box .selected {
+	position: absolute;
+	top:0;
+	left:0;
+	width:218px;
+	height:147px;
+	margin-left:17px;
+	background: url(../img/xy/selected_icon.png) right bottom no-repeat;
+}
+#content .address_content .address_content_list .address_box .address_top {line-height: 36px;overflow: hidden;}
+#content .address_content .address_content_list .address_box .address_top span{font-size: 14px;color:#333;}
+#content .address_content .address_content_list .address_box .address_top .person_name {float: left;}
+#content .address_content .address_content_list .address_box .address_top .person_phone {float: right;}
+#content .address_content .address_content_list .address_box .white_line {height:1px;background-color: #fff;}
+#content .address_content .address_content_list .address_box .address_detail {
+	margin-top:9px;
+}
+#content .address_content .address_content_list .address_box .address_detail p {
+	line-height:16px;
+	font-size: 14px;
+}
+#content .address_content .address_content_list .address_box .address_detail p span {color:#4874df;}
+#content .address_content .address_content_list .address_box .address_modify {line-height:34px;}
+#content .address_content .address_content_list .address_box .address_modify a.modify {color:#f42a51;}
+#content .address_content .address_content_list li {margin-bottom:30px;}
+#content .address_content .address_content_list .add_address_box {line-height: 18px;}
+#content .address_content .address_content_list .add_address_box p {font-size: 18px;color:#4874df;cursor: pointer;width:110px;}
+#content .address_content .address_content_list .select_confirm {border-radius:6px;display: block;line-height: 70px;font-size: 24px;color:#fff;background-color: #2a91e1;width:16%;margin:70px auto;text-align: center;font-family: "黑体";}
+
+/*新增地址*/
+.df-persp,
+.persp-bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 6000;
+	pointer-events: auto;
+	/*禁止事件穿透*/
+}
+.persp-bg {
+	-webkit-opacity: 0.2;
+	-moz-opacity: 0.2;
+	-khtml-opacity: 0.2;
+	opacity: .2;
+	filter: alpha(opacity=20);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 1;
+}
+.df-box {
+	border-radius: 10px;
+	text-shadow: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	z-index: 2;
+	position: absolute;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-ms-touch-action: none;
+	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(255,255,255,.5);
+	font-family: "黑体";
+	font-size: 24px;
+}
+.df-box .df_title {line-height: 72px;padding-left:26px;background-color: #fff;}
+.df-box .df_title p {
+	color:#4874df;
+	font-size: 18px;
+}
+.df-box .df_body {padding:14px 0 14px 42px;background-color: #fff;}
+.df-box .df_body li {line-height: 30px;margin-bottom:50px;}
+.df-box .df_body li:last-child {margin-bottom:10px;}
+.df-box .df_body li span{font-size: 16px;color:#333;margin-right:30px;float: left;}
+.df-box .df_body li input{line-height:30px;width: 65%;border:1px solid #999999;outline: none;font-size: 18px;text-indent: 10px;}
+.df-box .df_body li textarea{height:56px;width: 65%;resize: none;outline: none;border:1px solid #999999;font-size: 18px;line-height: 18px;padding:10px;}
+.df-box .df_bottom {
+	line-height: 40px;
+	overflow: hidden;
+	padding:0 25%;
+	background-color: #fff;
+	padding-bottom:40px;
+}
+.df-box .df_bottom a {display: block;width: 120px;color:#fff;background-color: #4874df;font-size: 18px;line-height:40px;text-align: center;}
+.df-box .df_bottom a.cancle {float: left;}
+.df-box .df_bottom a.save {float: right;}
+.df_address {
+	display: none;
+}
+/*药店更改的样式*/
+#content .diseases_header .diseases_detail .wrapper-box-top,#content .diseases_header .diseases_detail .wrapper-box-bottom {
+    width: 95%;
+    padding-right:30px;
+   overflow: hidden;
+}
+#content .diseases_header .diseases_detail .wrapper-box-bottom {padding:0 50px 0 0;box-sizing:content-box;width: 93%;}
+#content .diseases_header .diseases_detail .wrapper-box-top .ul-box-top,
+#content .diseases_header .diseases_detail .wrapper-box-bottom .ul-box-bottom {
+	width: 1000%;
+	overflow: hidden;
+	position: relative;
+}
+#content .diseases_header .diseases_detail .wrapper-box-bottom {border:1px solid #e0e0e0;border-radius:20px;}
+#content .diseases_header .diseases_detail .wrapper-box-top .ul-box-top ul,
+#content .diseases_header .diseases_detail .wrapper-box-bottom .ul-box-bottom ul{
+	float: left;
+	border: none;
+	/*margin-left:;*/
+	width: 1000px;
+}
+#content .diseases_header .diseases_detail .wrapper-box-bottom .ul-box-bottom ul:last-child{
+	float: left;
+	border: none;
+}
+#content .diseases_header .diseases_detail .diseases_detail_top,
+#content .diseases_header .diseases_detail .diseases_detail_bottom {padding-left:0;}
+#content .diseases_header .diseases_detail .diseases_detail_top li {margin:0 27px;}
+#content .diseases_header .diseases_detail .diseases_detail_top li a {padding:0;}
+#content .diseases_header .diseases_detail .diseases_detail_bottom li {margin:0 17px;}
+#content .diseases_header .diseases_detail .diseases_detail_bottom li a {padding:0;line-height: 34px;display: block;}
+#content .diseases_header .diseases_detail .wrapper-box-top .more_r{position:absolute;right:40px;top:14px;display: block;line-height: 40px;}
+#content .diseases_header .diseases_detail .wrapper-box-bottom .more_br {border-radius:20px;text-align:center;width:50px;position:absolute;right:24px;bottom:11px;display: block;line-height: 34px;background: #fff;}

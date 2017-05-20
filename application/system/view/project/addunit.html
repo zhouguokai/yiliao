@@ -1,0 +1,94 @@
+{extend name="base/common" /}
+{block name="body"}
+	<div class="wrapper wrapper-content animated fadeIn">
+		<div class="ibox float-e-margins">
+				<div class="ibox-title">
+                        <h5>新增{$typename}</h5>
+                 </div>
+			<div class="ibox-content">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="tabs-container">
+							<div class="tab-content">
+									<div class="ibox-content" style="border:none" >
+										<form class="form-horizontal" action="{:url()}" method="post">
+											<input type="hidden" name="type" value="{$type}">
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">{$typename}名称</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="" name="name" placeholder="" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">{$typename}图标</label>
+												<div class=".col-xs-6 col-sm-10">
+													{:Plugs('uploadimages',['name'=>'img_id','type'=>1,'value'=>0])}
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">{$typename}简介</label>
+												<div class=".col-xs-6 col-sm-10">
+													<textarea rows="5" cols="50" style="resize: none;" name="summary" ></textarea>
+												</div>
+											</div>
+
+											{if condition="$typename =='医院'"}
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">{$typename}等级</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="" name="title" placeholder="" />
+												</div>
+											</div>
+											{/if}
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">{$typename}区域</label>
+												<div class=".col-xs-6 col-sm-10">
+													{:Plugs('cityselect')}
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">{$typename}地址</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="" name="address"  placeholder="请先选定区域，再填写地址（区域以下）"/>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">登录名</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="text" class="form-control" value="" name="username" placeholder="请输入{$typename}登录用户名" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">登录密码</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="password" class="form-control" value="" name="password" placeholder="请输入{$typename}登录密码" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class=".col-xs-6 col-sm-2 control-label text-right">确认密码</label>
+												<div class=".col-xs-6 col-sm-10">
+													<input type="password" class="form-control" value="" name="repassword" placeholder="请再次输入登录密码" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<div class="col-sm-2"></div>
+												<div class="col-sm-4">
+													<button class="btn btn-primary ajax-post" type="submit" target-form="form-horizontal">保存</button>
+													<button class="btn btn-white btn-back" type="button" >返回</button>
+												</div>
+											</div>
+										</form>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ {/block}

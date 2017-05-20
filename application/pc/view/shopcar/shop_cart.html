@@ -1,0 +1,132 @@
+{extend name="common/common" /}
+{block name="body"}
+		<section id="content">
+			<div class="container min_width">
+				<div class="cart_content editing">
+					<div class="cart_content_title">
+						<h5>购物车</h5>
+					</div>
+					<div class="cart_content_list">
+						<ul>
+							<li class="cart_content_list_item">
+								<div class="list_top">
+									<a href="#" class="edit">编辑</a>
+									<div class="btns">
+    									<a href="#" class="take_self">自取</a>
+    									<a href="#" class="send">派送</a>
+    								</div>
+								</div>
+								<div class="list_bottom">
+									<ul>
+										<li class="common_height">
+											<p class="cart_medicine_name">三九感冒灵*<span>2</span></p>
+											<p class="cart_medicine_price">&yen;12.5</p>
+										</li>
+										<li class="common_height">
+											<p class="cart_medicine_name">三九感冒灵*<span>2</span></p>
+											<p class="cart_medicine_price">&yen;12.5</p>
+										</li>
+									</ul>
+									<div class="total_price common_height">
+										<p>总价</p>
+										<p>&yen;15</p>
+									</div>
+								</div>
+							</li>
+							<li class="cart_content_list_item">
+								<div class="list_top">
+									<a href="#" class="edit">编辑</a>
+									<div class="btns">
+    									<a href="#" class="take_self">自取</a>
+    									<a href="#" class="send">派送</a>
+    								</div>
+								</div>
+								<div class="list_bottom">
+									<ul>
+										<li class="common_height">
+											<p class="cart_medicine_name">三九感冒灵*<span>2</span></p>
+											<p class="cart_medicine_price">&yen;12.5</p>
+										</li>
+										<li class="common_height">
+											<p class="cart_medicine_name">三九感冒灵*<span>2</span></p>
+											<p class="cart_medicine_price">&yen;12.5</p>
+										</li>
+									</ul>
+									<div class="total_price common_height">
+										<p>总价</p>
+										<p>&yen;15</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="cart_content finishing">
+					<div class="cart_content_title">
+						<h5>购物车</h5>
+					</div>
+					<div class="cart_content_list">
+						<ul>
+							<li class="cart_content_list_item">
+								<div class="list_top">
+									<a href="#" class="finish">完成</a>
+									<div class="btns">
+    									<a href="#" class="take_self">自取</a>
+    									<a href="#" class="send">派送</a>
+    								</div>
+								</div>
+								<div class="list_bottom">
+									<ul>
+										<li class="common_height">
+											<p class="cart_medicine_name">三九感冒灵*<span>2</span></p>
+											<p class="cart_medicine_edit">
+												<span class="edit_num">
+													<span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="1" max="10"><span class="input-number-increment">+</span>
+												</span>
+												<span class="delete_btn"><img src="{$_img}/xy/del_icon.jpg"/></span>
+											</p>
+										</li>
+										<li class="common_height">
+											<p class="cart_medicine_name">三九感冒灵*<span>2</span></p>
+											<p class="cart_medicine_edit">
+												<span class="edit_num">
+													<span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="0" max="10"><span class="input-number-increment">+</span>
+												</span>
+												<span class="delete_btn"><img src="{$_img}/xy/del_icon.jpg"/></span>
+											</p>
+										</li>
+									</ul>
+									<div class="total_price common_height">
+										<p>总价</p>
+										<p>&yen;15</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+
+<script>
+	$(".cart_content_list_item .edit").click(function(){
+		$(".editing").hide();
+		$(".finishing").show();
+	});
+	$(".cart_content_list_item .finish").click(function(){
+		$(".finishing").hide();
+		$(".editing").show();
+	});
+	
+	//商品增减
+$(".edit_num .input-number-increment").click(function(){
+	var $goodsCount = parseInt($(this).prev().val());
+	$(this).prev().val($goodsCount+1);
+});
+$(".edit_num .input-number-decrement").click(function(){
+	var $goodsCount = parseInt($(this).next().val());
+	$(this).next().val($goodsCount<=1?1:$goodsCount-1);
+});	
+</script>
+{/block}

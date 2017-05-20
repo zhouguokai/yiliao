@@ -1,0 +1,96 @@
+{extend name="common/common" /}
+{block name="body"}
+		<section id="main-my-order">
+			<div class="main-my-order-title">
+				<h2>我的订单</h2>
+				<div class="">
+					<span class="order-conplete">已完成</span>
+					<span class="order-ongoing">进行中</span>
+				</div>
+				
+			</div>
+			<div class="order-box">
+				
+			
+				<!--进行中的订单-->
+				<div class="order-conplete-box none">
+					<div class="main-my-order-box">
+						<div class="order-box-top">
+							<h3>九芝堂大药房</h3>
+							<h4>123456789</h4>
+							<h4>兑换码：</h4>
+						</div>
+						<div class="order-box-mid">
+							<li><h5>三九感冒灵</h5><h5>&nbsp;*</h5><h5>2</h5><h6>12.5</h6><h6>￥</h6></li>
+							<li><h5>三九感冒灵</h5><h5>&nbsp;*</h5><h5>2</h5><h6>12.5</h6><h6>￥</h6></li>
+							<li><h5>总价</h5><h6>25</h6><h6>￥</h6></li>
+						</div>
+						<div class="order-box-bottom">
+							<li><h5>下单时间</h5><h6>2017-03-02 18：22</h6></li>
+							<li><h5>订单编号</h5><h6>201701010205</h6></li>
+							<li><h5>派送时间</h5><h6>2017-04-02 18：22</h6></li>
+							<li><h5>我的地址</h5><h6>长沙市岳麓区</h6></li>
+							<li><h5>手机号</h5><h6>18673211234</h6></li>
+						</div>
+					</div>
+					<div class="main-my-order-box">
+						<div class="order-box-top">
+							<h3>九芝堂大药房</h3>
+							<h4>123456789</h4>
+							<h4>兑换码：</h4>
+						</div>
+						<div class="order-box-mid">
+							<li><h5>三九感冒灵</h5><h5>&nbsp;*</h5><h5>2</h5><h6>12.5</h6><h6>￥</h6></li>
+							<li><h5>三九感冒灵</h5><h5>&nbsp;*</h5><h5>2</h5><h6>12.5</h6><h6>￥</h6></li>
+							<li><h5>总价</h5><h6>25</h6><h6>￥</h6></li>
+						</div>
+						<div class="order-box-bottom">
+							<li><h5>下单时间</h5><h6>2017-03-02 18：22</h6></li>
+							<li><h5>订单编号</h5><h6>201701010205</h6></li>
+							<li><h5>派送时间</h5><h6>2017-04-02 18：22</h6></li>
+							<li><h5>我的地址</h5><h6>长沙市岳麓区</h6></li>
+							<li><h5>手机号</h5><h6>18673211234</h6></li>
+						</div>
+					</div>
+				</div>
+				<!--进行中的订单-->
+				<div class="order-ongoing-box">
+					<div class="main-my-order-box">
+						<div class="order-box-top">
+							<h3>九芝堂大药房</h3>
+							<h4>123456789</h4>
+							<h4>兑换码：</h4>
+						</div>
+						<div class="order-box-mid">
+							<li><h5>三九感冒灵</h5><h5>&nbsp;*</h5><h5>2</h5><h6>12.5</h6><h6>￥</h6></li>
+							<li><h5>三九感冒灵</h5><h5>&nbsp;*</h5><h5>2</h5><h6>12.5</h6><h6>￥</h6></li>
+							<li><h5>总价</h5><h6>25</h6><h6>￥</h6></li>
+						</div>
+						<div class="order-box-bottom">
+							<li><h5>下单时间</h5><h6>2017-03-02 18：22</h6></li>
+							<li><h5>订单编号</h5><h6>201701010205</h6></li>
+							<li><h5>派送时间</h5><h6>2017-04-02 18：22</h6></li>
+							<li><h5>我的地址</h5><h6>长沙市岳麓区</h6></li>
+							<li><h5>手机号</h5><h6>18673211234</h6></li>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+<script type="text/javascript">
+	$(function(){
+		$('.order-conplete').on('click',function(){
+			$(this).css('color','#4874df').siblings().css('color','#333')
+			$('.order-conplete-box').addClass('block').removeClass('none')
+			$('.order-ongoing-box').addClass('none').removeClass('block')
+		})
+		$('.order-ongoing').on('click',function(){
+			$(this).css('color','#4874df').siblings().css('color','#333')
+			$('.order-ongoing-box').addClass('block').removeClass('none')
+			$('.order-conplete-box').addClass('none').removeClass('block')
+		})
+		
+	})
+</script>
+{/block}

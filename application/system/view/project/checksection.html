@@ -1,0 +1,51 @@
+{extend name="base/common" /}
+{block name="body"}
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>{$name}管理</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-9 m-b-xs">
+                            <a class="btn btn-primary" href="{:url('addsectionchild',['id'=>$id])}"><i class="fa fa-plus"></i> &nbsp;新增</a>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>名称</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name="list" id="vo"}
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.name} </td>
+                                <td>
+                                    <a href="{:url('editsection',['id'=>$vo['id']])}">
+                                        <i class="fa fa-edit"></i>
+                                        修改
+                                    </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a class="confirm ajax-get" href="{:url('delsection',['id'=>$vo['id']])}">
+                                        <i class="fa fa-trash text-danger"></i>
+                                        删除
+                                    </a>
+                                </td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{/block}

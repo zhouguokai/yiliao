@@ -1,0 +1,28 @@
+{extend name="base/common" /}
+{block name="body"}
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>药品分类管理</h5>
+				</div>
+				<div class="ibox-content">
+					<div class="table-responsive">
+						<form action="{:url('saveclass')}" method="post">
+							<div style="width: 640px; height: 100%; float: left;">
+								<input type="hidden" name="id" value="{$info.id}">
+								<div style="height: 60px;width: 150px;float: left; margin-top: 10px;margin-left: 10px">
+									<div style="height: 30px; width: 150px"><input class="form-control" style="width: 150px;" type="text" name="name" value="{$info.name}"></div>
+									<div style="height: 10px; line-height: 30px;text-align: center"><a class="confirm ajax-get"  href="{:url('delclass',['id'=>$info['id']])}"><i class="fa fa-trash text-danger"></i>删除</a></div>
+								</div>
+							</div>
+							<button class="btn btn-primary" style="clear: both; display: block;" type="submit" >保存</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{/block}
